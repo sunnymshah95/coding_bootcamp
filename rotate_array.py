@@ -36,7 +36,7 @@ if __name__ == '__main__':
     for item in arr:
         print(f"{item}", end = " ")
 
-    print("------------------")
+    print("\n------------------")
     print("Rotated array:")
     for item in result:
         print(f"{item}", end = " ")
