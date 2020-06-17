@@ -14,22 +14,16 @@ Time complexity:
 */
 
 #include <iostream>
+#include <algorithm>
 
 void selection_sort(int* a, int n) {
     for(int i = 0; i < n; ++i) {
-        int min = 10000;
-        int min_idx = -1;
-
-        // find the minimum element in the rest of the array
-        for(int j = i; j < n; ++j) {
-            if (*(a + j) < min) {
-                min = *(a + j);
-                min_idx = j;
-            }
-        }
+        // find the index of the minimum element in the rest of the array
+        int min_idx = (int) std::distance(a, std::min_element(a + i, a + n));
 
         // swap elements
-        int temp = *(a + i);
+        int temp = 0;
+        temp = *(a + i);
         *(a + i) = *(a + min_idx);
         *(a + min_idx) = temp;
     }
